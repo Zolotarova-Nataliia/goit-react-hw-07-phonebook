@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
+export const SpinnerWrap = styled.div`
+  position: relative;
+  margin-top: 50px;
+`;
 export const FormTitle = styled.h1`
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   position: relative;
   display: flex;
-  color: #e72828;
+  color: #3ee728;
   font-size: 26px;
   &::after {
     content: "";
@@ -15,14 +19,14 @@ export const FormTitle = styled.h1`
     bottom: -10px;
     width: 100%;
     height: 4px;
-    background: #e72828;
+    background: #3ee728;
   }
 `;
 
 export const FormSubtitle = styled.h2`
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #e72828;
+  color: #3ee728;
   font-size: 20px;
 `;
 
@@ -56,18 +60,21 @@ export const FormInput = styled.input`
 `;
 
 export const FormBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
-  border: 1px solid #e72828;
+  border: 1px solid #3ee728;
   font-family: "Montserrat", sans-serif;
-  color: #e72828;
+  color: #3ee728;
   font-size: 14px;
   height: 30px;
   padding: 5px 20px;
   cursor: pointer;
   outline: none;
   &:hover {
-    color: #ff0000;
-    border: 1px solid #ff0000;
+    color: #2eaf1d;
+    border: 1px solid #2eaf1d;
   }
 `;
 

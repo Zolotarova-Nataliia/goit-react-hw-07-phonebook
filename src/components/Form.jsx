@@ -1,10 +1,14 @@
 import { Fragment, useState } from "react";
 import PropTypes from "prop-types";
-import { StyledForm, FormLabel, FormInput, FormBtn } from "./Phonebook.styled";
+import { StyledForm, FormLabel, FormInput } from "./Phonebook.styled";
+import { Button } from "./Button";
+import { useSelector } from "react-redux";
+import { getIsAdding } from "../redux/contacts-selectors";
 
 export default function Form({ onSubmit }) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const isAdding = useSelector(getIsAdding);
   const handleChange = (event) => {
     const { name, value } = event.target;
     switch (name) {
@@ -61,7 +65,9 @@ export default function Form({ onSubmit }) {
             onChange={handleChange}
           />
         </FormLabel>
-        <FormBtn type="submit">Add contact</FormBtn>
+        <Button loading={isAdding} type="submit">
+          Add contact
+        </Button>
       </StyledForm>
     </Fragment>
   );
